@@ -14,11 +14,11 @@ def home():
 
 
 #BLOG
-@views.route("/blog")
+@views.route("/forum")
 @login_required
-def blog():
+def forum():
     posts = Post.query.all()
-    return render_template("blog.html", user=current_user, posts=posts)
+    return render_template("forum.html", user=current_user, posts=posts)
 
 
 # CREATE POST
