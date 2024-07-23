@@ -14,8 +14,10 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}' # Database URI set to use SQLite
     
     # Imports and register the blueprints for different parts of forum website app 
-    from .views import views # imports views blueprints from python file
-    from .auth import auth # imports auth blueprints from python file
+    # imports views blueprints from python file
+    # imports auth blueprints from python file
+    from .views import views 
+    from .auth import auth 
     
     app.register_blueprint(views, url_prefix="/") # registers views blueprint
     app.register_blueprint(auth, url_prefix="/") # registers auth blueprint
@@ -29,7 +31,7 @@ def create_app():
     
     #Login manager for user authentification. 
     login_manager = LoginManager()
-    login_manager.login_view = "auth.login" #
+    login_manager.login_view = "auth.login" 
     login_manager.init_app(app)
     
     # Defines user loader callback for the login manager
