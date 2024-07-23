@@ -1,4 +1,4 @@
-#Imports the create_app function from the website folder/package
+# Imports the create_app function from the website folder/package
 from website import create_app
 
 # create_app function creates flask app instance
