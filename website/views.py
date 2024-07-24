@@ -13,12 +13,12 @@ def home():
     return render_template("home.html", user=current_user)
 
 
-# Route to view home page 
-@views.route("/forum")
+# Route to view reviews page 
+@views.route("/review")
 @login_required
 def forum():
     posts = Post.query.all()
-    return render_template("forum.html", user=current_user, posts=posts)
+    return render_template("review.html", user=current_user, posts=posts)
 
 
 # CREATE POST
