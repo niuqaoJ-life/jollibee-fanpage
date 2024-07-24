@@ -13,7 +13,7 @@ def home():
     return render_template("home.html", user=current_user)
 
 
-#BLOG
+# Route to view home page 
 @views.route("/forum")
 @login_required
 def forum():
