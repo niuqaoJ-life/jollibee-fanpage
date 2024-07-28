@@ -3,10 +3,15 @@ body {
 }
 
 .navbar {
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: white;
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem ; 
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); /* Adds a shadow to the navbar */
+    transition: top 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Adds a smooth transition effect */
 }
 
 .navbar-toggler {
@@ -47,4 +52,18 @@ h2 {
 .banner img {
     width: 100%;
     height: auto;
+    object-fit: cover;
+}
+
+#navbar {
+    transition: top 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Adds a smooth transition effect */
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); /* Adds a shadow to the navbar */
 }

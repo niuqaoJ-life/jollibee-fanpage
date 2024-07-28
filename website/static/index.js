@@ -1,3 +1,17 @@
+window.onscroll = function () {toggleStickyNavbar()};
+
+function toggleStickyNavbar() {
+    var navbar = document.getElementById("navbar");
+    var banner = document.querySelector(".banner");
+    var sticky = banner.offsetHeight;
+
+    if (window.pageYOffset > sticky) {
+        navbar.classList.add("sticky");
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}
+
 function like(postId) {
     const likeCount = document.getElementById(`likes-count-${postId}`);
     const likeButton = document.getElementById(`like-button-${postId}`);

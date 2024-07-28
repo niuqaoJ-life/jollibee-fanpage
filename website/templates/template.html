@@ -23,7 +23,10 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-md sticky-top">
+
+    <!-- Navigation bar -->
+    <nav id="navbar" class="navbar navbar-expand-md">
+
         <!-- Logo -->
          <a class="navbar-logo" href="/home">
           <img src="static/assets/img/jollibee.svg" alt="Jollibee logo" class="logo ml-5">
@@ -60,8 +63,8 @@
             </li>
             {% endif %}
           </ul>
-        </div>
-      </nav>
+        </div> <!-- End of Navbar links -->
+      </nav> <!-- End of Navigation bar -->
 
 
       {% with messages = get_flashed_messages(with_categories=true) %}
