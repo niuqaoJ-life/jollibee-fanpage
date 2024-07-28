@@ -37,3 +37,14 @@ h2 {
     width: auto;
     vertical-align: auto;
 }
+
+.banner {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
