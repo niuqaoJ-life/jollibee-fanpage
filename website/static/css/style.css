@@ -23,6 +23,10 @@ body {
     margin-left: 20px;
 }
 
+.nav-item {
+    margin-top: 10px;
+}
+
 h2 {
     font-weight: 900;
 }
