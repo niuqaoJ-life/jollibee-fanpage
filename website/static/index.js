@@ -5,7 +5,7 @@ function toggleStickyNavbar() {
     var banner = document.querySelector(".banner");
     var sticky = banner.offsetHeight;
 
-    if (window.pageYOffset > sticky) {
+    if (window.pageYOffset > sticky - navbar.offsetHeight) {
         navbar.classList.add("sticky");
     } else {
         navbar.classList.remove("sticky");
