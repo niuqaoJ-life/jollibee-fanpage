@@ -50,7 +50,6 @@ h1, h2 {
     width: 100%;
     height: auto;
     overflow: hidden;
-    position: relative;
 }
 
 .banner img {
@@ -94,12 +93,16 @@ h1, h2 {
 }
 
 section {
-    padding: 60px 0;
+    width: 100%;	
+    box-sizing: border-box; /* Ensures that the border is included in the width and height of the element */
 }
+
 
 .container {
-    padding-left: 15px;
-    padding-right: 15px;
+    overflow: hidden;
     margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%; /* Ensures that the container does not exceed the width of the viewport */
+    box-sizing: border-box; /* Ensures that the padding and border are included in the width and height of the element */
 }
-
