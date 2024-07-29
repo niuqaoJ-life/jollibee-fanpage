@@ -106,3 +106,4 @@ section {
     max-width: 100%; /* Ensures that the container does not exceed the width of the viewport */
     box-sizing: border-box; /* Ensures that the padding and border are included in the width and height of the element */
 }
+
