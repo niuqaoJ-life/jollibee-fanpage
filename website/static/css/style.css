@@ -92,3 +92,14 @@ h1, h2 {
     opacity: 1;
     transform: translateY(0);
 }
+
+section {
+    padding: 60px 0;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+}
+
