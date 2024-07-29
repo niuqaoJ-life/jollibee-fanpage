@@ -28,3 +28,22 @@ function like(postId) {
         })
         .catch((e) => alert("Could not like post."));
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const elements = document.querySelectorAll('.hidden');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+});
