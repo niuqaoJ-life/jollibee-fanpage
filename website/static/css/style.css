@@ -36,7 +36,7 @@ nav a:hover {
     margin-left: auto;
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5 {
     font-weight: 900;
 }
 
@@ -107,3 +107,30 @@ section {
     box-sizing: border-box; /* Ensures that the padding and border are included in the width and height of the element */
 }
 
+.footer {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 20px 0;
+    padding: 2rem; 
+}
+
+.footer-image {
+    max-width: 100%; /* Ensures that the image does not exceed the width of the container */
+    max-height: 80px; /* Ensures that the image maintains its aspect ratio */
+    display: block; /* Removes any default styling that may affect the image */
+    margin-bottom: 10px;
+}
+
+.contact-heading {
+    border-top: 1px solid white;
+    margin-top: 10px;
+}
+
+.contact-info {
+    margin-bottom: 5px;
+}
+
+.quick-links a {
+    color: inherit;
+    text-decoration: none;
+}
