@@ -185,7 +185,26 @@ section {
 }
 
 /* Login stylesheet */
-.card {
+.login-card {
     border-radius: 8px; /* Adds rounded corners to the card */
     display: flex;
+}
+
+.login-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.login-right {
+    display: flex;
+    width: 50%;
+    height
+
+}
+
+.yippee-jollibee {
+    width: 200px;
+    height: auto;
 }
