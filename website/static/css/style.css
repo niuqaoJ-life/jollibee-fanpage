@@ -187,4 +187,5 @@ section {
 /* Login stylesheet */
 .card {
     border-radius: 8px; /* Adds rounded corners to the card */
+    display: flex;
 }
