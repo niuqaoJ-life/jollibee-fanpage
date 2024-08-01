@@ -184,7 +184,7 @@ section {
     text-decoration: none;
 }
 
-/* Login container */
-.login-box {
-    padding: 4rem;
+/* Login stylesheet */
+.card {
+    border-radius: 8px; /* Adds rounded corners to the card */
 }
