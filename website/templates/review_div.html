@@ -1,6 +1,7 @@
 {% extends "template.html" %}{% block title %}Home{% endblock %}
+
 {% block content %}
-<h1 align="center">{% block header %}Customer Reviews{% endblock %}</h1>
+<h1 align="center" class="my-5">{% block header %}Customer Reviews{% endblock %}</h1>
 <div id="posts">
     {% for post in posts %}
     <div class="card border-dark">
@@ -92,4 +93,6 @@
 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
 crossorigin="anonymous">
 </script>
-{% endblock %} {% endblock %}
+{% endblock %} 
+
+{% endblock %}

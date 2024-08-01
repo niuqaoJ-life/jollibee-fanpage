@@ -183,3 +183,8 @@ section {
     color: rgb(205, 32, 31);
     text-decoration: none;
 }
+
+/* Login container */
+.login-box {
+    padding: 4rem;
+}

@@ -35,7 +35,7 @@ def create_post():
             db.session.commit()
             flash('Post created!', category='success')
             return redirect(url_for('views.blog'))
-    return render_template('create_post.html', user=current_user)
+    return render_template('create_review.html', user=current_user)
 
 
 #Like Post
