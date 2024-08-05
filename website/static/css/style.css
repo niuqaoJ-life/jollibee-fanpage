@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5 {
 .hidden {
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+    transition: opacity 0.6s ease-out 0.5s, transform 0.6s ease-out 0.5s;
 }
 
 .animate {
@@ -251,4 +251,8 @@ section {
 
 .alert {
     margin: 0;
+}
+
+#reviews {
+    margin: 2rem;
 }
