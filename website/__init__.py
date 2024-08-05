@@ -39,6 +39,6 @@ def create_app():
     # Defines user loader callback for the login manager
     @login_manager.user_loader
     def load_user(id):
-        return User.query.get(int(id)) # Returns user with their ID
+        return User.query.get(int(id)) 
     
-    return app # returns configured flask app instance
+    return app 
