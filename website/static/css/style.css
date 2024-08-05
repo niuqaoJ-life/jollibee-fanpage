@@ -248,3 +248,12 @@ section {
 .jollipepe img:hover {
     transform: translateY(0);
 }
+
+.alert {
+    padding: 20px;
+    background-color: #FAF9F6; 
+    color: black;
+    margin: 0;
+    border: 1px solid black;
+    width: 350px;
+}

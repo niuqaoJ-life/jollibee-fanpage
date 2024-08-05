@@ -16,7 +16,7 @@ def home():
 # Route to view reviews page 
 @views.route("/review")
 @login_required
-def forum():
+def review():
     posts = Post.query.all()
     return render_template("review.html", user=current_user, posts=posts)
 
@@ -33,8 +33,8 @@ def create_post():
             post = Post(text=text, author=current_user.id)
             db.session.add(post)
             db.session.commit()
-            flash('Post created!', category='success')
-            return redirect(url_for('views.blog'))
+            flash('Review posted!', category='success')
+            return redirect(url_for('views.review'))
     return render_template('create_review.html', user=current_user)
 
 
@@ -68,7 +68,7 @@ def posts(username):
         return redirect(url_for('views.home'))
     
     posts = Post.query.filter_by(author=user.id).all()
-    return render_template("posts.html", user=current_user, posts=posts, username=username)
+    return render_template("reviews.html", user=current_user, posts=posts, username=username)
 
 
 #Delete Post
