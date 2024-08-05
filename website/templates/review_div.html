@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1 align="center" class="my-5">{% block header %}Customer Reviews{% endblock %}</h1>
-<div id="posts">
+<div id="reviews">
     {% for post in posts %}
     <div class="card border-dark">
         <div class="card-header d-flex justify-content-between align-items-center">
@@ -37,7 +37,7 @@
                         {% for comment in post.comments %}
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <a href="/post/{{comment.user.username}}">{{comment.user.username}}</a>: {{comment.text}}
+                                <a href="/posts/{{comment.user.username}}">{{comment.user.username}}</a>: {{comment.text}}
                             </div>
                             <div>
                                 <br/>

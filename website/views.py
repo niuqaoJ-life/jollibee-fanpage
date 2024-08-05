@@ -102,7 +102,7 @@ def create_comment(post_id):
             db.session.commit()
         else:
             flash('Post does not exist', category="error")
-    return redirect(url_for('views.blog'))
+    return redirect(url_for('views.review'))
 
 
 #Delete Comment 
@@ -117,4 +117,4 @@ def delete_comment(comment_id):
     else: 
         db.session.delete(comment)
         db.session.commit()
-    return redirect(url_for('views.blog'))
+    return redirect(url_for('views.review'))
