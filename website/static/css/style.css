@@ -204,7 +204,7 @@ section {
 }
 
 .login-left img {
-    width: 50%;
+    width: 100%;
     justify-content: center;
 }
 
@@ -229,6 +229,22 @@ section {
 }
 
 .signup-right img {
-    width: 50%;
+    width: 100%;
     justify-content: center;
+}
+
+
+/* Jollipepe */
+.jollipepe img{
+    position: fixed;
+    width: 150px;
+    bottom: 0;
+    right: 25px;
+    transform: translateY(80%);
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 10000000000000000000000000000000;
+}
+
+.jollipepe img:hover {
+    transform: translateY(0);
 }
