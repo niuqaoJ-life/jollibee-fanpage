@@ -184,9 +184,10 @@ section {
     text-decoration: none;
 }
 
-/* Login stylesheet */
+/* Login styling */
 .login-card {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -198,13 +199,36 @@ section {
 }
 
 .login-right {
-    display: flex;
     justify-content: center;
     width: 50%;
-
 }
 
 .login-left img {
-    width: 100%;
+    width: 50%;
+    justify-content: center;
 }
 
+/* Sign-Up styling */
+
+.signup-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-left {
+    justify-content: center;
+    width: 50%;
+}
+
+.signup-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.signup-right img {
+    width: 50%;
+    justify-content: center;
+}
