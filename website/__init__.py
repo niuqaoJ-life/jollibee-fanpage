@@ -6,13 +6,13 @@ from flask_login import LoginManager
 
 # Creates an SQLAlchemy object for the database
 db = SQLAlchemy()
-DB_NAME = "database.db" # Assigns the name for the database file
+DB_NAME = "database.db" 
 
 # Function creates the flask app and configures it 
 def create_app():
-    app = Flask(__name__) # Creates a flask instance
-    app.config['SECRET_KEY'] = "7QmMbkyHfp" # Secret key configuration
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}' # Database URI set to use SQLite
+    app = Flask(__name__) 
+    app.config['SECRET_KEY'] = "7QmMbkyHfp" 
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}' 
     db.init_app(app)
     
     # Imports and register the blueprints for different parts of forum website app 
@@ -21,8 +21,8 @@ def create_app():
     from .views import views 
     from .auth import auth 
     
-    app.register_blueprint(views, url_prefix="/") # registers views blueprint
-    app.register_blueprint(auth, url_prefix="/") # registers auth blueprint
+    app.register_blueprint(views, url_prefix="/") 
+    app.register_blueprint(auth, url_prefix="/") 
     
     # From models python file, takes user and the post. 
     from .models import User, Post
