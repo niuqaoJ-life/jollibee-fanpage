@@ -186,8 +186,8 @@ section {
 
 /* Login stylesheet */
 .login-card {
-    border-radius: 8px; /* Adds rounded corners to the card */
     display: flex;
+    align-items: center;
 }
 
 .login-left {
@@ -199,12 +199,12 @@ section {
 
 .login-right {
     display: flex;
+    justify-content: center;
     width: 50%;
-    height
 
 }
 
-.yippee-jollibee {
-    width: 200px;
-    height: auto;
+.login-left img {
+    width: 100%;
 }
+
