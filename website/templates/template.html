@@ -30,7 +30,7 @@
 
         <!-- Logo -->
          <a class="navbar-logo" href="/home">
-          <img src="static/assets/img/jollibee.svg" alt="Jollibee logo" class="logo ml-5">
+          <img src="{{ url_for('static', filename='assets/img/jollibee.svg') }}" alt="Jollibee logo" class="logo ml-5">
          </a>
         
         
@@ -48,6 +48,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/review">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/account">Account</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/logout">Logout</a>
@@ -69,7 +72,7 @@
 
       <!-- Jollipepe Popup -->
       <div class="jollipepe">
-        <img src="static/assets/img/jollipepe.png" alt="Jollipepe">
+        <img src="{{ url_for('static', filename='assets/img/jollipepe.png') }}" alt="Jollipepe">
       </div>
 
       {% with messages = get_flashed_messages(with_categories=true) %}
@@ -100,7 +103,7 @@
 
             <!-- Jollibee Logo & Copyright -->
              <div class="col-md-4">
-                <img class="footer-image" src="static\assets\img\jollibee-logo-footer-2x.jpeg" alt="Jollibee Logo" >
+                <img class="footer-image" src="{{ url_for('static', filename='assets/img/jollibee-logo-footer-2x.jpeg') }}" alt="Jollibee Logo" >
                 <p class="contact-info">No rights reserved (Unofficial Website) </p>
              </div>
 
