@@ -259,5 +259,38 @@ section {
 }
 
 .reviews {
-    margin: 5rem;
+    padding: 5rem;
+    background-color: rgb(164, 4, 4);
+
+    h1 {
+        color: white;
+    }
+
+    .btn {
+        background-color: #fa8003;
+        border-radius: 40px;
+        font-weight: 800;
+        color: white;
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a{
+        color: black;
+        margin-bottom: 0;
+    }
+
+    a:hover{
+        text-decoration: none;
+        color: rgb(164, 4, 4);
+    }
 }

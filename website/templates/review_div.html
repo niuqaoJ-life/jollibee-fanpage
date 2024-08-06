@@ -4,17 +4,17 @@
 <div class="reviews">
     <h1 align="center" class="my-5">{% block header %}Customer Reviews{% endblock %}</h1>
     <div class="d-flex justify-content-between">
-        <a href="/home"><button type="button" class="btn btn-primary btn-lg">Back</button></a>
+        <a href="/home"><button type="button" class="btn btn-lg">Back</button></a>
         <a href="/create-post">
-            <button type="button" class="btn btn-primary btn-lg">Post a Review</button>
+            <button type="button" class="btn btn-lg">Post a Review</button>
         </a>
     </div>
     <br/>
     <div id="posts">
         {% for post in posts %}
-        <div class="card border-dark">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
+        <div class="card">
+            <div class="card-header">
+                <strong><a href="/posts/{{post.user.username}}">{{post.user.username}}</a></strong>
                 <div> <!-- this is a new div for thumbs up -->
                     <span id="likes-count-{{post.id}}">
                     {{ post.likes|length }}</span>
