@@ -258,6 +258,7 @@ section {
     margin: 0;
 }
 
+/* styling for reviews page*/
 .reviews {
     padding: 5rem;
     background-color: rgb(164, 4, 4);
@@ -275,6 +276,7 @@ section {
 
     .card {
         border-radius: 10px;
+        
     }
 
 }
