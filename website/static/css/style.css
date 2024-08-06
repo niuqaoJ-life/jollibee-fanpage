@@ -2,6 +2,7 @@ body {
     font-family: Nunito, sans-serif;
 }
 
+/* CSS for the navbar*/
 .navbar {
     top: 0;
     width: 100%;
@@ -13,20 +14,24 @@ body {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); /* Adds a shadow to the navbar */
 }
 
+/* CSS for the navbar toggler icon*/
 .navbar-toggler {
-    border: none; /* Ensures that the toggler button has no border for a cleaner look*/
+    border: none; 
 }
 
+/* CSS url for the toggler icon*/
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+/* CSS for the navbar links*/
 .nav-link {
     color: rgb(0, 0, 0);
     font-weight: 900;
     margin-left: 20px;
 }
 
+/* CSS for the navbar links when hovered*/
 nav a:hover {
     color: rgb(169, 4, 4);
 }
@@ -62,6 +67,7 @@ h1, h2, h3, h4, h5 {
     transition: all 0.5s; /* Adds a smooth transition effect */
 }
 
+/* CSS sticky class to make navbar sticky with the use of javascript */
 .sticky {
     position: fixed;
     top: 0;
@@ -103,8 +109,7 @@ section {
     margin: 0;
     padding: 0;
     width: 100%;
-    max-width: 100%; /* Ensures that the container does not exceed the width of the viewport */
-    box-sizing: border-box; /* Ensures that the padding and border are included in the width and height of the element */
+    max-width: 100%; 
 }
 
 .footer {
@@ -253,6 +258,6 @@ section {
     margin: 0;
 }
 
-#reviews {
-    margin: 2rem;
+.reviews {
+    margin: 5rem;
 }

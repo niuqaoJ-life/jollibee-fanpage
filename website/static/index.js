@@ -2,10 +2,9 @@ window.onscroll = function () {toggleStickyNavbar()};
 
 function toggleStickyNavbar() {
     var navbar = document.getElementById("navbar");
-    var banner = document.querySelector(".banner");
-    var sticky = banner.offsetHeight;
+    var sticky = 230;
 
-    if (window.pageYOffset > sticky - navbar.offsetHeight) {
+    if (window.pageYOffset >= sticky - navbar.offsetHeight) {
         navbar.classList.add("sticky");
     } else {
         navbar.classList.remove("sticky");
