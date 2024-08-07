@@ -301,3 +301,9 @@ section {
 .create_review {
     padding: 5rem;
 }
+
+.create_review_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
