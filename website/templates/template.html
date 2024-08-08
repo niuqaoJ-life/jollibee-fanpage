@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
-    
+    <!-- Title of the page -->
     <title> {% block title %}{% endblock %} </title>
   </head>
 
@@ -93,6 +93,7 @@
       </div> <!-- end of success alert message -->
       {% endif %} {% endfor %} {% endif %} {% endwith %}
 
+    <!-- Content of where other pages will be that extend the template html file -->      
     <div class="container"> {% block content %}{% endblock %} </div> 
 
     <!-- Footer -->
