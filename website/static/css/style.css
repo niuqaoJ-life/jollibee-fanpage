@@ -10,8 +10,15 @@ body {
     background-color: white;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem ; 
+    align-items: center;
+    padding: 1rem ; 
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1); /* Adds a shadow to the navbar */
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 /* CSS for the navbar toggler icon*/
@@ -29,7 +36,6 @@ body {
     color: rgb(0, 0, 0);
     font-weight: 900;
     font-size: 1.5rem;
-    margin-left: 20px;
 }
 
 /* CSS for the navbar links when hovered*/
@@ -38,8 +44,7 @@ nav a:hover {
 }
 
 .nav-item {
-    margin-top: 10px;
-    margin-left: auto;
+    padding: 0.5rem;
 }
 
 
@@ -49,9 +54,8 @@ h1, h2, h3, h4, h5 {
 
 /* CSS for the logo */
 .logo {
-    height: 80px;
-    width: auto;
-    vertical-align: auto;
+    margin-left: 10px;
+    width: 250px
 }
 
 /* CSS for the banner */
@@ -133,7 +137,12 @@ section {
     color: white;
     height: auto;
     padding: 3rem; 
+
+    .col-md-3 {
+        padding-bottom: 30px;
+    }
 }
+
 
 .footer-image {
     width: 75%;
@@ -153,11 +162,7 @@ section {
 }
 
 .contact-info {
-    margin-bottom: 5px;
-}
-
-.email-info {
-    padding-bottom: 10px;
+    margin-bottom: 4px;
 }
 
 .quick-link {
