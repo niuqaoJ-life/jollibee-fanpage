@@ -1,18 +1,24 @@
 {% extends "template.html" %}{% block title %}Customer Reviews{% endblock %}
 
 {% block content %}
+<!-- Customer Reviews Display -->
 <div class="reviews">
+    <!-- Header -->
     <h1 align="center" class="my-5">{% block header %}Customer Reviews{% endblock %}</h1>
+    <!-- Buttons -->
     <div class="d-flex justify-content-between">
         <a href="/home"><button type="button" class="btn btn-lg">Back</button></a>
         <a href="/create-post">
             <button type="button" class="btn btn-lg">Post a Review</button>
         </a>
     </div>
+
     <br/>
+    <!-- Posts -->
     <div id="posts">
         {% for post in posts %}
         <div class="card post-box">
+            <!-- Post Header -->
             <div class="card-header d-flex justify-content-betweeen align-items-center">
                 <strong><a href="/posts/{{post.user.username}}">{{post.user.username}}</a></strong>
                 <div class="d-flex align-items-center"> <!-- this is a new div for thumbs up -->
@@ -36,6 +42,7 @@
                     {% endif %}
                 </div> <!-- this is the end of the new div for thumbs up -->
             </div>
+            <!-- Post Body -->
             <div class="card-body">
                 <div class="card-text">{{post.text}}</div>
                 <br/>
@@ -72,6 +79,8 @@
                     </div>
                 </div> <!--THis is the end div for comments-->
                 <br/>
+
+                <!-- Comment Section -->
                 <p class="card-text">
                     {% if post.comments|length > 0 %}
                     <a data-bs-toggle="collapse" href="#comments-{{post.id}}" role="button">
@@ -81,6 +90,7 @@
                     <small class="text-muted">No Comments</small> 
                     {% endif %}
                 </p>
+                <!-- Comment input and button -->
                 <form class="input-group mb-3" method="POST" action="/create-comment/{{post.id}}">
                     <input type="text" id="text" name="text" class="form-control" placeholder="Comment something!"/>
                     <button type="submit" class="btn">Comment</button>

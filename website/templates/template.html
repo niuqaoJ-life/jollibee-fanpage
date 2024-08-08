@@ -72,6 +72,7 @@
         <img src="{{ url_for('static', filename='assets/img/jollipepe.png') }}" alt="Jollipepe">
       </div>
 
+      <!-- Alert Messages -->
       {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
       {% for category, message in messages %} {% if category =='error'%}

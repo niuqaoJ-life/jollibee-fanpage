@@ -1,7 +1,10 @@
 {% extends "template.html" %}{% block title %}Sign Up {% endblock %}
 {% block content %}
+
+<!-- Sign Up Form -->
 <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="signup-card">
+        <!--Left section of sign-up card (input form)-->
         <div class="signup-left p-5">
             <form method="POST">
                 <h3>Sign Up</h3>
@@ -51,10 +54,11 @@
                     </div>
                 </div>
             </form>
-        </div>
+        </div> <!--End of left section of sign-up card-->
+        <!--Right section of sign-up card (image)-->
         <div class="signup-right p-3">
             <img class="img-fluid" src="static/assets/img/yippee_jollibee.svg" alt="Login Image"/>
-        </div>
+        </div> <!--End of right section of sign-up card-->
     </div>
 </div>
 

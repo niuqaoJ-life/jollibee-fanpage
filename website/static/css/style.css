@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem ; 
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); /* Adds a shadow to the navbar */
+    box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.1); /* Adds a shadow to the navbar */
 }
 
 /* CSS for the navbar toggler icon*/
@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5 {
     width: 100%;
     z-index: 1000;
     background-color: white;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); /* Adds a shadow to the navbar */
+    box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.097); /* Adds a shadow to the navbar */
     animation: collapseDown 0.5s forwards; /* Adds a collapsing effect when the navbar becomes sticky */
 }
 
