@@ -12,10 +12,10 @@
     <br/>
     <div id="posts">
         {% for post in posts %}
-        <div class="card">
-            <div class="card-header">
+        <div class="card post-box">
+            <div class="card-header d-flex justify-content-betweeen align-items-center">
                 <strong><a href="/posts/{{post.user.username}}">{{post.user.username}}</a></strong>
-                <div> <!-- this is a new div for thumbs up -->
+                <div class="d-flex align-items-center"> <!-- this is a new div for thumbs up -->
                     <span id="likes-count-{{post.id}}">
                     {{ post.likes|length }}</span>
                     {% if user.id in post.likes|map(attribute="author")|list %}
@@ -25,17 +25,17 @@
                     <i class="far fa-thumbs-up" id="like-button-{{post.id}}" onclick="like({{post.id}})">
                     </i>
                     {% endif %}
-                    {% if user.id == post.author %}
-                    <div class="btn-group">
-                        <button type"button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="/delete-post/{{post.id}}" class="dropdown-item">Delete</a>
-                            </li>
-                        </ul>
-                    </div>
-                    {% endif %}
                 </div> <!-- this is the end of the new div for thumbs up -->
+                {% if user.id == post.author %}
+                <div class="btn-group">
+                    <button type"button" class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown"></button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/delete-post/{{post.id}}" class="dropdown-item">Delete</a>
+                        </li>
+                    </ul>
+                </div>
+                {% endif %}
             </div>
             <div class="card-body">
                 <div class="card-text">{{post.text}}</div>
@@ -56,7 +56,7 @@
 
                                     {% if user.id == comment.author or user.id == post.author %}
                                     <div class="btn-group">
-                                        <button type"button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
+                                        <button type"button" class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown"></button>
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <a href="/delete-comment/{{post.id}}" class="dropdown-item">Delete</a>
@@ -83,7 +83,7 @@
                 </p>
                 <form class="input-group mb-3" method="POST" action="/create-comment/{{post.id}}">
                     <input type="text" id="text" name="text" class="form-control" placeholder="Comment something!"/>
-                    <button type="submit" class="btn btn-primary">Comment</button>
+                    <button type="submit" class="btn">Comment</button>
                 </form> <!-- This is the end of the comment section -->
             </div>
             <div class="card-footer text-muted">{{post.date_created}}</div>
