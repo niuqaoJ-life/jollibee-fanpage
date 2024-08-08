@@ -20,13 +20,6 @@ def review():
     posts = Post.query.all()
     return render_template("review.html", user=current_user, posts=posts)
 
-# Route to view account page 
-@views.route("/account")
-@login_required 
-def account():
-    posts = Post.query.all()
-    return render_template("account.html", user=current_user)
-
 # CREATE POST
 @views.route("/create-post", methods=['GET', 'POST'])
 @login_required

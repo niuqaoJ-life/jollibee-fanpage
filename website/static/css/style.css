@@ -328,3 +328,29 @@ section {
 .fa-thumbs-up {
     margin-left: 4px;
 }
+
+/* styling for create reviews */
+.create_review {
+    margin: 20rem;
+    h1 {
+        color: black;
+    }
+}
+.create_review_card {
+    max-width: 100%;
+    height: auto;
+    border: #000000;
+}
+
+.review-textarea:hover {
+    background-color: #dee2e6;
+}
+
+.review-textarea {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    resize: none;
+    background-color: f8f9fa;
+    transition: background-color 0.3s;
+}

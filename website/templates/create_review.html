@@ -1,17 +1,20 @@
 {% extends "template.html" %}{% block title %}Create Review{% endblock %}
 {% block content %}
 <div class="create_review">
-    <h1>Make a Review</h1>
+    <h1>Post your own Review!</h1>
     <div class="create_review_card">
         <form method="POST">
-            <textarea name="text" id="text" class="form-control"></textarea>
+            <textarea name="text" id="text" placeholder="" class="form-control review-textarea"></textarea>
             <br/>   
             
-            <div align="center">
-                <button type="submit" class="btn btn-lg btn-primary">Post</button>
-            </div> 
+            <div class="d-flex justify-content-between">
+                <a href="/home"><button type="button" class="btn btn-lg">Back</button></a>
+                <a href="/create-post">
+                    <button type="button" class="btn btn-lg">Post</button>
+                </a>
+            </div>
         </form>
         <br/>
     </div>
-</div>
+</div
 {% endblock %} 
