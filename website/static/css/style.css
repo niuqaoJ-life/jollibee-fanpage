@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem ; 
-    box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.1); /* Adds a shadow to the navbar */
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1); /* Adds a shadow to the navbar */
 }
 
 /* CSS for the navbar toggler icon*/
@@ -28,6 +28,7 @@ body {
 .nav-link {
     color: rgb(0, 0, 0);
     font-weight: 900;
+    font-size: 1.5rem;
     margin-left: 20px;
 }
 
@@ -74,7 +75,7 @@ h1, h2, h3, h4, h5 {
     width: 100%;
     z-index: 1000;
     background-color: white;
-    box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.097); /* Adds a shadow to the navbar */
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.097); /* Adds a shadow to the navbar */
     animation: collapseDown 0.5s forwards; /* Adds a collapsing effect when the navbar becomes sticky */
 }
 
@@ -119,14 +120,13 @@ section {
 .footer {
     background-color: rgb(164, 4, 4);
     color: white;
-    padding: 20px 0;
     padding: 2rem; 
 }
 
 .footer-image {
-    max-width: 100%; /* Ensures that the image does not exceed the width of the container */
-    max-height: 80px; /* Ensures that the image maintains its aspect ratio */
-    display: block; /* Removes any default styling that may affect the image */
+    width: 75%;
+    height: auto;
+    display: block; 
     margin-bottom: 10px;
 }
 
@@ -135,8 +135,18 @@ section {
     padding-top: 10px;
 }
 
+.copyright-info {
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+}
+
 .contact-info {
     margin-bottom: 5px;
+}
+
+.email-info {
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
 }
 
 .quick-links a {
