@@ -16,8 +16,7 @@
             <div class="card-header d-flex justify-content-betweeen align-items-center">
                 <strong><a href="/posts/{{post.user.username}}">{{post.user.username}}</a></strong>
                 <div class="d-flex align-items-center"> <!-- this is a new div for thumbs up -->
-                    <span id="likes-count-{{post.id}}">
-                    {{ post.likes|length }}</span>
+                    <span id="likes-count-{{post.id}}">{{ post.likes|length }}</span>
                     {% if user.id in post.likes|map(attribute="author")|list %}
                     <i class="fas fa-thumbs-up" id="like-button-{{post.id}}" onclick="like({{post.id}})">
                     </i>
@@ -25,17 +24,17 @@
                     <i class="far fa-thumbs-up" id="like-button-{{post.id}}" onclick="like({{post.id}})">
                     </i>
                     {% endif %}
+                    {% if user.id == post.author %}
+                    <div class="btn-group ms-2">
+                        <button type"button" class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown"></button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/delete-post/{{post.id}}" class="dropdown-item">Delete</a>
+                            </li>
+                        </ul>
+                    </div>
+                    {% endif %}
                 </div> <!-- this is the end of the new div for thumbs up -->
-                {% if user.id == post.author %}
-                <div class="btn-group">
-                    <button type"button" class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown"></button>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="/delete-post/{{post.id}}" class="dropdown-item">Delete</a>
-                        </li>
-                    </ul>
-                </div>
-                {% endif %}
             </div>
             <div class="card-body">
                 <div class="card-text">{{post.text}}</div>
@@ -72,10 +71,11 @@
                         </div>
                     </div>
                 </div> <!--THis is the end div for comments-->
+                <br/>
                 <p class="card-text">
                     {% if post.comments|length > 0 %}
                     <a data-bs-toggle="collapse" href="#comments-{{post.id}}" role="button">
-                        <small>View {{post.comments|length}} Comments</small>
+                        <strong>View {{post.comments|length}} Comments</strong>
                     </a>
                     {% else %}
                     <small class="text-muted">No Comments</small> 

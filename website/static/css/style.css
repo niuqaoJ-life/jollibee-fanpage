@@ -310,15 +310,21 @@ section {
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
 
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.card-header .d-flex {
+    display: flex;
+    align-items: center;
+}
 
-/* styling for the create review page */
-textarea {
-    position: relative;
-    padding: 10px;
-    width: 100%;
-    height: 300px;
-    resize: none;
-    outline: none;
-    border-radius: 10px;
+.card-header .ms-2 {
+    margin-left: 4px;
+}
+
+.fa-thumbs-up {
+    margin-left: 4px;
 }
