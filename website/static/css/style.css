@@ -35,7 +35,7 @@ body {
 .nav-link {
     color: rgb(0, 0, 0);
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 /* CSS for the navbar links when hovered*/
@@ -110,21 +110,47 @@ h1, h2, h3, h4, h5 {
     transform: translateY(0);
 }
 
+
 /* CSS for the main section */
 section {
     width: 100%;	
     box-sizing: border-box; /* Ensures that the border is included in the width and height of the element */
+    border-radius: 50px;
+}
+
+.section-red {
+    border-radius: 0 0 50px 50px;
+    color: white;
+    background-color: rgb(164, 4, 4);
+    position: relative;
+}
+
+.section-red-2 {
+    border-radius: 50px 50px 0 0 ;
+    color: white;
+    background-color: rgb(164, 4, 4);
+    position: relative;
+}
+
+
+
+/* Jollipepe */
+.jollipepe img{
+    position: fixed;
+    width: 150px;
+    bottom: 0;
+    right: 25px;
+    transform: translateY(80%);
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 10000000000000000000000000000000;
+}
+
+.jollipepe img:hover {
+    transform: translateY(0);
 }
 
 /* CSS for the main section */
-.section-red {
-    background-color: rgb(164, 4, 4);
-    color: white;
-}
-
-
 .container {
-    overflow: hidden;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -133,6 +159,7 @@ section {
 
 /* CSS for the footer */
 .footer {
+    border-top: 1px solid #ffffff;
     background-color: rgb(164, 4, 4);
     color: white;
     height: auto;
@@ -140,6 +167,20 @@ section {
 
     .col-md-3 {
         padding-bottom: 30px;
+    }
+
+    .btn {
+        background-color: #ffffff;
+        border-radius: 20px;
+        font-weight: 800;
+        color: rgb(164, 4, 4);
+        transition: transform 0.5s ease;
+    }
+    
+    .btn:hover {
+        background-color: #dee2e6;
+        color: rgb(169, 4, 4);
+        transform: scale(1.025);
     }
 }
 
@@ -243,21 +284,6 @@ section {
     justify-content: center;
 }
 
-
-/* Jollipepe */
-.jollipepe img{
-    position: fixed;
-    width: 150px;
-    bottom: 0;
-    right: 25px;
-    transform: translateY(80%);
-    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    z-index: 10000000000000000000000000000000;
-}
-
-.jollipepe img:hover {
-    transform: translateY(0);
-}
 
 .alert {
     margin: 0;
