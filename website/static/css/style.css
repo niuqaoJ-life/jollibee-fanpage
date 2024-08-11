@@ -124,7 +124,6 @@ section {
 
 
 .container {
-    overflow: hidden;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -137,9 +136,24 @@ section {
     color: white;
     height: auto;
     padding: 3rem; 
+    border-top: 1px solid #dee2e6;
 
     .col-md-3 {
         padding-bottom: 30px;
+    }
+
+    .btn {
+        background-color: #dee2e6;
+        border-radius: 40px;
+        font-weight: 800;
+        color: rgb(169, 4, 4);
+        transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .btn:hover {
+        background-color: #f8f9fa;
+        color: rgb(169, 4, 4);
+        transform: translateY(-5px);
     }
 }
 
@@ -174,7 +188,7 @@ section {
 
 .quick-link:hover {
     color: #dee2e6;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 /* Size of the social icons */
@@ -333,8 +347,8 @@ section {
     }
     
     a:hover{
-        text-decoration: none;
-        color: rgb(164, 4, 4);
+        text-decoration: underline;
+        color: black;
     }
 }
 
