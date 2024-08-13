@@ -320,6 +320,7 @@ section {
 
 }
 
+
 .btn {
     background-color: #fa8003;
     border-radius: 40px;
@@ -401,4 +402,16 @@ section {
     resize: none;
     background-color: f8f9fa;
     transition: background-color 0.3s;
+}
+
+/* Media Query for phone screen sizes */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 !important;
+    }
+
+    .reviews {
+        padding: 2rem;
+        background: rgb(169, 4, 4);
+    }
 }
