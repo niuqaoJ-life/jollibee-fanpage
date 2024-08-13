@@ -83,6 +83,7 @@ h1, h2, h3, h4, h5 {
     top: 0;
     width: 100%;
     z-index: 1000;
+    transform: translateY(-100%);
     background-color: white;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.097); /* Adds a shadow to the navbar */
     animation: collapseDown 0.5s forwards; /* Adds a collapsing effect when the navbar becomes sticky */
@@ -380,7 +381,8 @@ section {
 
 /* styling for create reviews */
 .create_review {
-    margin: 20rem;
+    padding: 5rem;
+    margin: 0 2rem 0 2rem; 
     h1 {
         color: black;
     }
