@@ -1,26 +1,28 @@
 {% extends "template.html" %}{% block title %}Create Review{% endblock %}
 {% block content %}
 <!-- Create Review Form -->
-<div class="create_review">
-    <h1>Post your own Review!</h1>
-    <div class="create_review_card">
-        <form method="POST">
-            <!-- Textarea user can write review -->
-            <textarea name="text" id="text" placeholder="Share details of your thoughts and experiences at Jollibee" class="form-control review-textarea"></textarea>
-            <br/>   
+<div class="container">
+    <div class="create_review">
+        <h1>Post your own Review!</h1>
+        <div class="create_review_card">
+            <form method="POST">
+                <!-- Textarea user can write review -->
+                <textarea name="text" id="text" placeholder="Share details of your thoughts and experiences at Jollibee" class="form-control review-textarea"></textarea>
+                <br/>   
 
-            <!-- Post and Back button-->
-            <div class="d-flex justify-content-between">
-                <a href="/home">
-                    <button type="button" class="btn btn-lg">Back</button>
-                </a>
-                <a href="/create-post">
-                    <button type="button" class="btn btn-lg">Post</button>
-                </a>
-            </div> <!-- end of div for post and back button -->
+                <!-- Post and Back button-->
+                <div class="d-flex justify-content-between">
+                    <a href="/home">
+                        <button type="button" class="btn btn-lg">Back</button>
+                    </a>
+                    <a href="/create-post">
+                        <button type="button" class="btn btn-lg">Post</button>
+                    </a>
+                </div> <!-- end of div for post and back button -->
 
-        </form>
-        <br/>
+            </form>
+            <br/>
+        </div>
     </div>
-</div
+</div>
 {% endblock %} 
