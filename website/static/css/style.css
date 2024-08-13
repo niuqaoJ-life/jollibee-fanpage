@@ -209,57 +209,6 @@ section {
     text-decoration: none;
 }
 
-/* Login styling */
-.login-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-
-.login-right {
-    justify-content: center;
-    width: 50%;
-}
-
-.login-left img {
-    width: 100%;
-    justify-content: center;
-    height: auto;
-}
-
-/* Sign-Up styling */
-
-.signup-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.signup-left {
-    justify-content: center;
-    width: 50%;
-}
-
-.signup-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-
-.signup-right img {
-    width: 100%;
-    justify-content: center;
-}
-
-
 /* Jollipepe */
 .jollipepe img{
     position: fixed;
