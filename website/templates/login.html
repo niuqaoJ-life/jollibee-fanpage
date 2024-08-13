@@ -1,52 +1,54 @@
 {% extends "template.html" %}{% block title %}Login{% endblock %}
 {% block content %}
 <!-- Login Form -->
-<div class="container d-flex justify-content-center align-items-center min-vh-100">
-    <!-- Login Card -->
-    <div class="login-card">
-        <!-- Left section of login card (image) -->
-        <div class="login-left p-3">
-            <img class="img-fluid" src="static/assets/img/yippee_jollibee.svg" alt="Login Image"/>
-        </div> <!-- End of left section of login card -->
-
-        <!-- Right section of login card (input form) -->
-        <div class="login-right p-5">
-            <form method="POST">
-                <h3 class="my-3">Login</h3>
-                <!-- Form Group -->
-                <div class="form-group">
-                    <!-- Email input -->
-                    <label for="email">Email Address</label>
-                    <input 
-                        type="text" 
-                        id="email" 
-                        name="email" 
-                        class="form-control" 
-                        placeholder="Enter Email"
-                    />
-                    <br/>
-
-                    <!-- Password input -->
-                    <label for="password">Password</label>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        name="password" 
-                        class="form-control" 
-                        placeholder="Enter Password"
-                    />
-                    <br/>
-
-                    <!-- Login button -->
-                    <div align="center">
-                        <button class="btn btn-primary" type="submit">Login</button>
-                    </div>
-
+<section>
+    <div class="container p-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <img class="img-fluid" src="static/assets/img/bini_member_3.jpg" alt="Bini Member" />
                 </div>
-            </form>
-        </div> <!-- End of right section of login card div -->
-    </div> <!-- End of login card div-->
-</div> <!-- End of login container div -->
+            </div>
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <form method="POST">
+                        <h3 class="my-3">Login</h3>
+                        <!-- Form Group -->
+                        <div class="form-group">
+                            <!-- Email input -->
+                            <label for="email">Email Address</label>
+                            <input 
+                                type="text" 
+                                id="email" 
+                                name="email" 
+                                class="form-control" 
+                                placeholder="Enter Email"
+                            />
+                            <br/>
+        
+                            <!-- Password input -->
+                            <label for="password">Password</label>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                class="form-control" 
+                                placeholder="Enter Password"
+                            />
+                            <br/>
+        
+                            <!-- Login button -->
+                            <div align="center">
+                                <button class="btn btn-primary" type="submit">Login</button>
+                            </div>
+        
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block footer %}
