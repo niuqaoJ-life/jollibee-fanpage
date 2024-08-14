@@ -332,6 +332,7 @@ section {
 .create_review {
     padding: 5rem;
     margin: 2rem 2rem; 
+    height: 100vh;
     h1 {
         color: black;
     }
@@ -364,5 +365,9 @@ section {
     .reviews {
         padding: 2rem;
         background: rgb(169, 4, 4);
+    }
+
+    .create_review {
+        padding: 2rem;
     }
 }
