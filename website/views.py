@@ -99,6 +99,7 @@ def create_comment(post_id):
             comment = Comment(text=text, author=current_user.id, post_id=post_id)
             db.session.add(comment)
             db.session.commit()
+            flash('Comment posted!', category='success')
         else:
             flash('Post does not exist', category="error")
     return redirect(url_for('views.review'))

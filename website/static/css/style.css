@@ -372,3 +372,8 @@ section {
         padding: 2rem;
     }
 }
+
+legend {
+    font-size: 2.5rem;
+    font-weight: 900;
+}

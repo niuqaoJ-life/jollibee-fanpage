@@ -15,7 +15,8 @@
                     <form method="POST" action="">
                         {{ form.hidden_tag()}}
                         <fieldset class="form-group">
-                            <legend class="border-bottom mb-2">Sign Up</legend>
+                            <legend class="border-bottom mb-2">Sign Up</legend></strong>
+                            <h5 class="text-muted"> Enter your details to create an account</h5>
 
                             <div class="form-group">
                                 {{ form.username.label(class="form-control-label")}}
@@ -70,7 +71,7 @@
                                         {% endfor %}
                                     </div>
                                 {% else %}
-                                    {{ form.email(class="form-control form-control-lg")}}
+                                    {{ form.confirm_password(class="form-control form-control-lg")}}
                                 {% endif %}
                             </div>
                         </fieldset>
