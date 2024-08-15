@@ -34,9 +34,9 @@ def login():
 def sign_up():
     if current_user.is_authenticated:
         return redirect(url_for('views.home'))
-    form= RegistrationForm()
+    form = RegistrationForm()
     if form.validate_on_submit():
-        hashed_password = generate_password_hash(form.password.data, method='sha256')
+        hashed_password = generate_password_hash((form.password.data), method='sha256')
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
