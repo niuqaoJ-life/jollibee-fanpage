@@ -39,9 +39,11 @@ body {
 }
 
 /* CSS for the navbar links when hovered*/
-nav a:hover {
-    color: rgb(169, 4, 4);
+.nav-link:hover {
+    color: inherit;
+    text-decoration: underline;
 }
+
 
 .nav-item {
     padding: 0.5rem;
@@ -276,11 +278,14 @@ section {
     border-radius: 40px;
     font-weight: 800;
     color: white;
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .btn:hover {
-    background-color: #FF620F;
+    background-color: #fa8003;
     color: white;
+    transform: translateY(-5px);
+    text-decoration: underline;
 }
 
 
@@ -329,32 +334,32 @@ section {
 }
 
 /* styling for create reviews */
+/* CSS for create review page  */
+
 .create_review {
     padding: 5rem;
     margin: 2rem 2rem; 
     height: 100vh;
-    h1 {
-        color: black;
-    }
 }
 
+/* CSS for the form */
 .create_review_card {
     max-width: 100%;
     height: auto;
-    border: #000000;
 }
 
-.review-textarea:hover {
-    background-color: #dee2e6;
+.review-textarea:focus {
+    border: 1px solid black !important;
+    box-shadow: none !important;
 }
 
+/* CSS for the textarea */
 .review-textarea {
     border-radius: 8px;
     width: 100%;
     height: auto;
     resize: none;
     background-color: f8f9fa;
-    transition: background-color 0.3s;
 }
 
 /* Media Query for phone screen sizes */
