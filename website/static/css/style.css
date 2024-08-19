@@ -36,12 +36,13 @@ body {
     color: rgb(0, 0, 0);
     font-weight: 900;
     font-size: 1.25rem;
+    padding: .25rem !important;
 }
 
 /* CSS for the navbar links when hovered*/
 .nav-link:hover {
     color: inherit;
-    text-decoration: underline;
+    border-bottom: 1px solid black;
 }
 
 
@@ -143,21 +144,7 @@ section {
     border-top: 1px solid #dee2e6;
 
     .col-md-3 {
-        padding-bottom: 30px;
-    }
-
-    .btn {
-        background-color: #dee2e6;
-        border-radius: 40px;
-        font-weight: 800;
-        color: rgb(169, 4, 4);
-        transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-
-    .btn:hover {
-        background-color: #f8f9fa;
-        color: rgb(169, 4, 4);
-        transform: translateY(-5px);
+        margin-bottom: 30px;
     }
 }
 
@@ -333,6 +320,10 @@ section {
     margin-left: 4px;
 }
 
+.fa-thumbs-up:hover {
+    cursor: pointer;
+}
+
 /* styling for create reviews */
 /* CSS for create review page  */
 
@@ -375,6 +366,10 @@ section {
 
     .create_review {
         padding: 2rem;
+    }
+
+    .p-5 {
+        padding: 2rem !important;
     }
 }
 
