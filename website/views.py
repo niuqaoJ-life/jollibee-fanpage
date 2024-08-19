@@ -66,9 +66,11 @@ def posts(username):
     if not user:
         flash('No user with that username exists.', category='error')
         return redirect(url_for('views.home'))
-    
-    posts = Post.query.filter_by(author=user.id).all()
-    return render_template("reviews.html", user=current_user, posts=posts, username=username)
+
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.filter_by(author=user.id).paginate(page=page, per_page=4)
+
+    return render_template("user_reviews.html", user=current_user, posts=posts, username=username)
 
 
 #Delete Post
