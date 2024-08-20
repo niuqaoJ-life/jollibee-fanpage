@@ -26,7 +26,6 @@ def review():
 @login_required
 def account(username):
     user = User.query.filter_by(username=username).first()
-
     page = request.args.get('page', 1, type=int)
     posts = Post.query.filter_by(author=user.id).paginate(page=page, per_page=4)    
     return render_template("account.html", user=user, posts=posts)
