@@ -21,6 +21,11 @@ def review():
     posts = Post.query.order_by(Post.date_created.desc()).paginate(page=page, per_page=4)
     return render_template("review.html", user=current_user, posts=posts)
 
+@views.route("/account")
+@login_required
+def account():
+    return render_template("account.html", user=current_user)
+
 # CREATE POST
 @views.route("/create-post", methods=['GET', 'POST'])
 @login_required

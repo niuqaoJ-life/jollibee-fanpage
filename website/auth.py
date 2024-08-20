@@ -33,6 +33,7 @@ def login():
 @auth.route("/sign-up", methods=['GET', 'POST'])
 def sign_up():
     if current_user.is_authenticated:
+        flash('You are already signed in.', category='success')
         return redirect(url_for('views.home'))
     form = RegistrationForm()
     if form.validate_on_submit():

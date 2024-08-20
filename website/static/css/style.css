@@ -268,13 +268,29 @@ section {
     transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
     background-color: #fa8003;
     color: white;
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     text-shadow: 1px 1px 1px grey;
+    box-shadow: none !important;
+
 }
 
+.form-control {
+    border-radius: 8px !important;
+    border: 1px solid #ced4da;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border: 1px solid black !important;
+    box-shadow: none !important;
+}
+
+.card post-box btn:ho {
+
+}
 
 .post-box {
     background-color: #f8f9fa;
