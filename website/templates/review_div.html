@@ -15,6 +15,7 @@
     </div>
 
     <br/>
+
     <!-- Posts -->
     <div id="posts">
         {% for post in posts %}
@@ -60,7 +61,7 @@
                                 </div>
                                 <div>
                                     <br/>
-                                    <small class="text-muted"> {{comment.date_created}}</small>
+                                    <small class="text-muted"> {{comment.date_created}} </small>
 
                                     {% if user.id == comment.author or user.id == post.author %}
                                     <div class="btn-group">

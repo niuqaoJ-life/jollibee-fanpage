@@ -20,6 +20,8 @@
 
     <!-- Title of the page -->
     <title> {% block title %}{% endblock %} </title>
+
+    <!-- Favicon for website -->
     <link rel="icon" href="{{ url_for('static', filename="assets/img/favicon.webp") }}">
   </head>
 
@@ -51,7 +53,7 @@
               <a class="nav-link" href="/review">Reviews</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/account">Account</a>
+              <a class="nav-link" href="/account/{{ user.username }}">Account</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/logout">Logout</a>
