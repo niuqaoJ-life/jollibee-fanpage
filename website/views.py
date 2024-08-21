@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
 from .models import Post, User, Like, Comment
+from .forms import UpdateAccountForm
 from . import db
 
 views = Blueprint("views", __name__)
@@ -20,15 +21,6 @@ def review():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.date_created.desc()).paginate(page=page, per_page=4)
     return render_template("review.html", user=current_user, posts=posts)
-
-# Route to view account page
-@views.route('/account/<username>')
-@login_required
-def account(username):
-    user = User.query.filter_by(username=username).first()
-    page = request.args.get('page', 1, type=int)
-    posts = Post.query.filter_by(author=user.id).paginate(page=page, per_page=4)    
-    return render_template("account.html", user=user, posts=posts)
 
 # CREATE POST
 @views.route("/create-post", methods=['GET', 'POST'])
@@ -130,3 +122,20 @@ def delete_comment(comment_id):
         db.session.delete(comment)
         db.session.commit()
     return redirect(url_for('views.review'))
+
+# Route to view account page
+@views.route("/account", methods=['GET', 'POST'])
+@login_required
+def account():    
+    form = UpdateAccountForm()
+    if form.validate_on_submit():
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        db.session.commit()
+        flash('Account updated!', category='success')
+        return redirect(url_for('views.account'))
+    elif request.method == 'GET':
+        form.username.data = current_user.username
+        form.email.data = current_user.email
+    return render_template('account.html', user=current_user, form=form)
+        
