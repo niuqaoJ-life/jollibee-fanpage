@@ -137,5 +137,11 @@ def account():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.email.data = current_user.email
-    return render_template('account.html', user=current_user, form=form)
+        
+        
+    # Query filter the posts for the current user
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.date_created.desc()).paginate(page=page, per_page=3)
+    
+    return render_template('account.html', user=current_user, form=form, posts=posts)
         
