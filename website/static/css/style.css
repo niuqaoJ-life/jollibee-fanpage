@@ -480,4 +480,13 @@ legend {
     }
 }
 
+@media (min-width: 1200px) {
 
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+}
