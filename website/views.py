@@ -141,16 +141,16 @@ def account():
     return render_template('account.html', user=current_user, form=form)
 
 # Route for changing password
-@views.route ("/change-password", methods=['GET', 'POST'])
+@views.route("/change-password", methods=['GET', 'POST'])
 @login_required
 def change_password():
     form = ChangePasswordForm()
     if form.validate_on_submit():
-        if current_user.check_password(form.old_password.data):
-            current_user.set_password(form.new_password.data)
-            db.session.commit()
-            flash('Password changed!', category='success')
-            return redirect(url_for('views.account'))
-        else:
-            flash('Old password is incorrect.', category='error')
+        current_user.password = form.new_password.data
+        db.session.commit()
+        flash('Password Changed!', category='success')
+        return redirect(url_for('views.account'))
+    elif request.method == 'GET':
+        form.old_password.data = current_user.password
+        
     return render_template('change_password.html', user=current_user, form=form)
