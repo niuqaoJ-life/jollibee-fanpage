@@ -456,6 +456,7 @@ legend {
     padding: 8rem;
 }
 
+/* CSS for account page responsive on small screens */
 @media (max-width: 480px) {
     .account-section {
         margin: 2rem;
@@ -465,7 +466,18 @@ legend {
         padding: 2rem;
         margin-bottom: 1rem;
     }
-
-    
 }
+
+/* CSS for change password page responsiveness on small screens */
+@media (max-width: 480px) {
+    .change-password-page {
+        margin: 2rem;
+        padding: 2rem;
+    }
+
+    .bini-member-image {
+        display: none;
+    }
+}
+
 
