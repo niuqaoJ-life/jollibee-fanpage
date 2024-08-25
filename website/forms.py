@@ -40,3 +40,14 @@ class UpdateAccountForm(FlaskForm):
             user = User.query.filter_by(email=email.data).first()
             if user:
                 raise ValidationError('That email is taken. Please choose a different one.')
+            
+class ChangePasswordForm (FlaskForm):
+    old_password = PasswordField('Old Password', validators=[DataRequired()], render_kw={"placeholder": "Old Password"})
+    new_password = PasswordField('New Password', validators=[DataRequired()], render_kw={"placeholder": "New Password"})
+    confirm_password = PasswordField('Confirm New Password', validators=[DataRequired(), EqualTo('new_password')], render_kw={"placeholder": "Confirm New Password"})
+    submit = SubmitField('Change Password')
+    
+    # Validate old password to ensure it is correct 
+    def validate_old_password(self, old_password):
+        if not current_user.check_password(old_password.data):
+            raise ValidationError('Old password is incorrect.')

@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
 from .models import Post, User, Like, Comment
-from .forms import UpdateAccountForm
+from .forms import UpdateAccountForm, ChangePasswordForm
 from . import db
 
 views = Blueprint("views", __name__)
@@ -123,7 +123,7 @@ def delete_comment(comment_id):
         db.session.commit()
     return redirect(url_for('views.review'))
 
-# Route to view account page
+# Route to view account page and edit account details
 @views.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():    
@@ -138,4 +138,19 @@ def account():
         form.username.data = current_user.username
         form.email.data = current_user.email
     
-    return render_template('account.html', user=current_user, form=form, posts=posts)
+    return render_template('account.html', user=current_user, form=form)
+
+# Route for changing password
+@views.route ("/change-password", methods=['GET', 'POST'])
+@login_required
+def change_password():
+    form = ChangePasswordForm()
+    if form.validate_on_submit():
+        if current_user.check_password(form.old_password.data):
+            current_user.set_password(form.new_password.data)
+            db.session.commit()
+            flash('Password changed!', category='success')
+            return redirect(url_for('views.account'))
+        else:
+            flash('Old password is incorrect.', category='error')
+    return render_template('change_password.html', user=current_user, form=form)

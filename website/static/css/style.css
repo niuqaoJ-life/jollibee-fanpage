@@ -395,11 +395,11 @@ legend {
 /* CSS for accounts page */
 .account-section {
     margin: 5rem;
-    h1 {
+    h2 {
         margin-top: 10px;
     }
 
-    h2 {
+    h1 {
         border-bottom: 1px solid black;
         padding-bottom: 10px;
     }
@@ -410,9 +410,8 @@ legend {
     }
 
     .col-lg-3 {
-        display: block;
-        padding: 2rem;
-        border: #000000 1px solid;
+        padding: 1rem;
+        border: 1px solid yellowgreen;
         border-radius: 10px;
     }
     
