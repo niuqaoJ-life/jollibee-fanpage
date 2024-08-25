@@ -28,13 +28,16 @@
                     <p>Email Address: {{ current_user.email }}</p>
                     <p>User ID: {{ current_user.id }}</p>
                     <p>Member since: {{ current_user.date_created.strftime('%B %d, %Y') }}</p>
-                    <a class="change_password" href="/change-password"> Forgot Password? </a>
 
                 </div>
                 <!-- Button to trigger the update account popup -->
                 <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#accountModal">
                     Edit Account 
                 </button>
+
+                <a class="change_password" href="/change-password"
+                    <button type="button" class="btn btn-lg"> Change Password </button>
+                </a>
 
                 <!-- Update account popup -->
                 <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel" aria-hidden="true">

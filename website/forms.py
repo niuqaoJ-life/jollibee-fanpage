@@ -48,5 +48,7 @@ class ChangePasswordForm (FlaskForm):
     submit = SubmitField('Change Password')
     
     def validate_old_password(self, old_password):
-        if old_password.data != current_user.password:
-            raise ValidationError('Old password is incorrect')
+        if old_password != current_user.password:
+            old_password = User.query.filter_by(password=old_password.data).first()
+            if old_password:
+                raise ValidationError('Old password is incorrect')
