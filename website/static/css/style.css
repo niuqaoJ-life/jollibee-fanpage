@@ -395,50 +395,60 @@ legend {
 /* CSS for accounts page */
 .account-section {
     margin: 5rem;
-    h2 {
-        margin-top: 10px;
-    }
 
     h1 {
+        font-size: 2.5rem;
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        display: inline-block;
         border-bottom: 1px solid black;
         padding-bottom: 10px;
     }
 
     .row {
-        border: red 1px solid;
         border-radius: 10px;
     }
 
     .col-lg-3 {
         padding: 1rem;
-        border: 1px solid yellowgreen;
         border-radius: 10px;
     }
     
     .col-lg-9 {
         padding: 1rem;
-        border: #000000 1px solid;
         border-radius: 10px;
-        background-image: url();
     }
 
     .col-lg-12{
-        border: blue 1px solid;
         border-radius: 10px;
-        padding: 2rem;
+        padding: 2rem;;
     }
 
     .column-header{
-        padding: 2rem;
-        margin-bottom: 10px;
+        padding: 3rem;
+        margin-bottom: 2rem;
+        border-radius: 30px;
+        background: #ffffff;
+        box-shadow:  11px 11px 22px #c2c2c2,
+                     -11px -11px 22px #ffffff;
     }
 
-    .overview-buttons {
-        padding: 10px;
-        background: rgb(169, 4, 4);
-        border-radius: 10px;
-        display: inline-block;
+    .account-details {
+        border-radius: 30px;
+        background: #ffffff;
+        box-shadow:  11px 11px 22px #c2c2c2,
+                     -11px -11px 22px #ffffff;
     }
+
+    .bini-member {
+        background: #ffffff;
+        box-shadow:  11px 11px 22px #c2c2c2,
+                     -11px -11px 22px #ffffff;
+    }
+
 }
 
 
