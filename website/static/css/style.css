@@ -408,48 +408,41 @@ legend {
         border-bottom: 1px solid black;
         padding-bottom: 10px;
     }
+}
 
-    .row {
-        border-radius: 10px;
-    }
+.row {
+    border-radius: 10px;
+}
 
-    .col-lg-3 {
-        padding: 1rem;
-        border-radius: 10px;
-    }
-    
-    .col-lg-9 {
-        padding: 1rem;
-        border-radius: 10px;
-    }
+.col-lg-3 {
+    padding: 1rem;
+    border-radius: 10px;
+}
 
-    .col-lg-12{
-        border-radius: 10px;
-        padding: 2rem;;
-    }
+.col-lg-9 {
+    padding: 1rem;
+    border-radius: 10px;
+}
 
-    .column-header{
-        padding: 3rem;
-        margin-bottom: 2rem;
-        border-radius: 30px;
-        background: #ffffff;
-        box-shadow:  11px 11px 22px #c2c2c2,
-                     -11px -11px 22px #ffffff;
-    }
+.col-lg-12{
+    border-radius: 10px;
+    padding: 2rem;;
+}
 
-    .account-details {
-        border-radius: 30px;
-        background: #ffffff;
-        box-shadow:  11px 11px 22px #c2c2c2,
-                     -11px -11px 22px #ffffff;
-    }
+.column-header{
+    padding: 3rem;
+    margin-bottom: 2rem;
+    border-radius: 30px;
+    background: #ffffff;
+    box-shadow:  11px 11px 22px #c2c2c2,
+                 -11px -11px 22px #ffffff;
+}
 
-    .bini-member {
-        background: #ffffff;
-        box-shadow:  11px 11px 22px #c2c2c2,
-                     -11px -11px 22px #ffffff;
-    }
-
+.account-details {
+    border-radius: 30px;
+    background: #ffffff;
+    box-shadow:  11px 11px 22px #c2c2c2,
+                 -11px -11px 22px #ffffff;
 }
 
 /* CSS for the change password page */
@@ -463,4 +456,16 @@ legend {
     padding: 8rem;
 }
 
+@media (max-width: 480px) {
+    .account-section {
+        margin: 2rem;
+    }
+
+    .column-header {
+        padding: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    
+}
 
