@@ -146,7 +146,7 @@ def account():
 def change_password():
     form = ChangePasswordForm()
     if form.validate_on_submit():
-        current_user.password = form.new_password.data
+        current_user.password = form.old_password.data
         db.session.commit()
         flash('Password Changed!', category='success')
         return redirect(url_for('views.account'))
