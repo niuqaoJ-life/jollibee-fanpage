@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 from flask_login import login_required, current_user
 from .models import Post, User, Like, Comment
 from .forms import UpdateAccountForm, ChangePasswordForm
+from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 
 views = Blueprint("views", __name__)
@@ -146,11 +147,14 @@ def account():
 def change_password():
     form = ChangePasswordForm()
     if form.validate_on_submit():
-        current_user.password = form.old_password.data
-        db.session.commit()
-        flash('Password Changed!', category='success')
-        return redirect(url_for('views.account'))
+        # Verifying the old password
+        if check_password_hash(current_user.password, form.old_password.data):
+            hashed_password = generate_password_hash((form.new_password.data), method='pbkdf2:sha256')
+            current_user.password = hashed_password
+            db.session.commit()
+            flash('Password succesfully changed!', category='success')
+            return redirect(url_for('views.account'))
     elif request.method == 'GET':
-        form.old_password.data = current_user.password
+        form.old_password.data = ''
         
     return render_template('change_password.html', user=current_user, form=form)
