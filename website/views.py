@@ -149,6 +149,7 @@ def change_password():
     if form.validate_on_submit():
         # Verifying the old password
         if check_password_hash(current_user.password, form.old_password.data):
+            # Hashes the new password before committing to database
             hashed_password = generate_password_hash((form.new_password.data), method='pbkdf2:sha256')
             current_user.password = hashed_password
             db.session.commit()
