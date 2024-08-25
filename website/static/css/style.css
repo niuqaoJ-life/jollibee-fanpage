@@ -242,6 +242,7 @@ section {
     }
 }
 
+/* Removes margin that alert message has by default */
 .alert {
     margin: 0;
 }
@@ -451,5 +452,15 @@ legend {
 
 }
 
+/* CSS for the change password page */
+.change-password-page {
+    margin: 2rem 8rem 8rem 8rem;
+    align-items: center;
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #d9d9d9,
+                 -20px -20px 60px #ffffff;
+    padding: 8rem;
+}
 
 

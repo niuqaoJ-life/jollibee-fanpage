@@ -138,7 +138,8 @@ def account():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.email.data = current_user.email
-    
+    else:
+        flash('Invalid username or email, please try again.', category='error')
     return render_template('account.html', user=current_user, form=form)
 
 # Route for changing password
