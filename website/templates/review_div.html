@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="utf-8" />
 {% extends "template.html" %}{% block title %}Customer Reviews{% endblock %}
 
 {% block content %}
@@ -9,10 +12,8 @@
 
     <!-- Buttons -->
     <div class="d-flex justify-content-between">
-        <a href="/home"><button type="button" class="btn btn-lg">Back</button></a>
-        <a href="/create-post">
-            <button type="button" class="btn btn-lg">Post a Review</button>
-        </a>
+        <button onclick="window.location.href='/home'; " type="button" class="btn btn-lg">Back</button>
+        <button onclick="window.location.href='/create-post'; " type="button" class="btn btn-lg">Post a Review</button>
     </div>
 
     <br/>
@@ -127,3 +128,4 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
 crossorigin="anonymous">
 </script>
 {% endblock %} {% endblock %}
+</html>
