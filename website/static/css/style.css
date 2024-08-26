@@ -152,12 +152,11 @@ section {
     height: auto;
     padding: 3rem;
     border-top: 1px solid #dee2e6;
-
-    .col-md-3 {
-        margin-bottom: 30px;
-    }
 }
 
+.col-md-3 {
+    margin-bottom: 30px;
+}
 
 .footer-image {
     width: 75%;
@@ -228,14 +227,14 @@ section {
     transform: translateY(-52.5%);
     display: flex;
     justify-content: space-between;
+}
 
-    .star-left {
-        transform: translateX(-50%);
-    }
+.star-left {
+    transform: translateX(-50%);
+}
 
-    .star-right {
-        transform: translateX(50%);
-    }
+.star-right {
+    transform: translateX(50%);
 }
 
 .stars-2 {
@@ -261,15 +260,13 @@ section {
 .reviews {
     padding: 5rem;
     background-color: rgb(164, 4, 4);
-
-    h1 {
-        color: white;
-        text-shadow: 2px 2px 4px #000000;
-        font-size: 4rem;
-    }
-
 }
 
+.review-header {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 4rem;
+}
 
 .btn {
     background-color: #fa8003;
@@ -309,17 +306,17 @@ section {
     padding: 20px;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    a {
-        color: black;
-        margin-bottom: 0;
-        font-weight: bold;
-    }
+.post-box a {
+    color: black;
+    margin-bottom: 0;
+    font-weight: bold;
+}
 
-    a:hover {
-        text-decoration: underline;
-        color: black;
-    }
+.post-box a:hover {
+    text-decoration: underline;
+    color: black;
 }
 
 .post-box:hover {
@@ -376,7 +373,7 @@ section {
     width: 100%;
     height: auto;
     resize: none;
-    background-color: f8f9fa;
+    background-color: #f8f9fa;
 }
 
 /* Media Query for phone screen sizes */
@@ -407,18 +404,19 @@ legend {
 /* CSS for accounts page */
 .account-section {
     margin: 5rem;
+}
 
-    h1 {
-        font-size: 2.5rem;
-        border-bottom: 1px solid black;
-        padding-bottom: 10px;
-    }
+.account-details h2 {
+    display: inline-block;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
 
-    h2 {
-        display: inline-block;
-        border-bottom: 1px solid black;
-        padding-bottom: 10px;
-    }
+.column-header h1 {
+    font-size: 2.5rem;
+    border-bottom: 1px solid black;
+    font-weight: 900;
+    padding-bottom: 10px;
 }
 
 .row {
