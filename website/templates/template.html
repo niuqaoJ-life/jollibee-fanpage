@@ -2,158 +2,210 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/999ca2bb93.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/999ca2bb93.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Own stylesheet-->
-     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
 
     <!-- Google Font for website -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Title of the page -->
-    <title> {% block title %}{% endblock %} </title>
+    <title>{% block title %}{% endblock %}</title>
 
     <!-- Favicon for website -->
-    <link rel="icon" href="{{ url_for('static', filename="assets/img/favicon.webp") }}">
+    <link rel="icon" href="{{ url_for('static',
+    filename="assets/img/favicon.webp") }}">
   </head>
 
   <body>
-
-
     <!-- Navigation bar -->
     <nav id="navbar" class="navbar navbar-expand-lg d-flex align-items-center">
+      <!-- Navbar Logo -->
+      <a class="navbar-logo" href="/home">
+        <img
+          src="{{ url_for('static', filename='assets/img/jollibee-logo.jpeg') }}"
+          alt="Jollibee logo"
+          class="logo img-fluid"
+        />
+      </a>
 
-        <!-- Navbar Logo -->
-         <a class="navbar-logo" href="/home">
-          <img src="{{ url_for('static', filename='assets/img/jollibee-logo.jpeg') }}" alt="Jollibee logo" class="logo img-fluid">
-         </a>
-        
-        
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <!-- Toggler/collapsibe Button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav d-flex align-items-center">
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link" href="/review">Reviews</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/account">Account</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/logout">Logout</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link" href="/review">Reviews</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/sign-up">Sign up</a>
-            </li>
-            {% endif %}
-          </ul>
-        </div> <!-- End of Navbar links -->
-      </nav> <!-- End of Navigation bar -->
-
-      <!-- Jollipepe Popup -->
-      <div class="jollipepe">
-        <img src="{{ url_for('static', filename='assets/img/jollipepe.png') }}" alt="Jollipepe">
-      </div>
-
-      <!-- Alert Messages -->
-      {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        {% for category, message in messages %} 
-          {% if category =='error'%}
-          <!-- alert message if error occurs i.e. login/signup details are wrong -->
-          <div class="alert alert-danger alert-dismissable fade show" role="alert">
-            {{ message }}
-            <button type="button" class="close" data-dismiss="alert">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div> <!-- end of error alert message -->
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav d-flex align-items-center">
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="/review">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/account">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
           {% else %}
-          <!-- alert message if inputs are successful i.e login/signup or review is posted -->
-          <div class="alert alert-success alert-dismissable fade show" role="alert">
-            {{ message }}
-            <button type="button" class="close" data-dismiss="alert">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div> <!-- end of success alert message -->
-          {% endif %} 
-        {% endfor %} 
-      {% endif %} 
-      {% endwith %}
+          <li class="nav-item">
+            <a class="nav-link" href="/review">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sign-up">Sign up</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+      <!-- End of Navbar links -->
+    </nav>
+    <!-- End of Navigation bar -->
 
-    <!-- Content of where other pages will be that extend the template html file -->      
-    <div class="container"> {% block content %}{% endblock %} </div> 
+    <!-- Jollipepe Popup -->
+    <div class="jollipepe">
+      <img
+        src="{{ url_for('static', filename='assets/img/jollipepe.png') }}"
+        alt="Jollipepe"
+      />
+    </div>
+
+    <!-- Alert Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category
+    =='error'%}
+    <!-- alert message if error occurs i.e. login/signup details are wrong -->
+    <div class="alert alert-danger alert-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <!-- end of error alert message -->
+    {% else %}
+    <!-- alert message if inputs are successful i.e login/signup or review is posted -->
+    <div class="alert alert-success alert-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <!-- end of success alert message -->
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+    <!-- Content of where other pages will be that extend the template html file -->
+    <div class="container">{% block content %}{% endblock %}</div>
 
     <!-- Footer -->
-      <footer id="sticky-footer" class="footer flex-shrink-0">
-        <div class="container">
-          <div class="row">
+    <footer id="sticky-footer" class="footer flex-shrink-0">
+      <div class="container">
+        <div class="row">
+          <!-- Jollibee Logo & Copyright -->
+          <div class="col-md-3">
+            <img
+              class="footer-image"
+              src="{{ url_for('static', filename='assets/img/jollibee-logo-2x.webp') }}"
+              alt="Jollibee Logo"
+            />
+            <p class="copyright-info">
+              No rights reserved (Unofficial Website)
+            </p>
+            <a href="https://www.jollibee.com.ph" target="_blank"
+              ><button type="button" class="btn btn-lg">
+                Official Jollibee Website
+              </button></a
+            >
+          </div>
 
-            <!-- Jollibee Logo & Copyright -->
-             <div class="col-md-3">
-                <img class="footer-image" src="{{ url_for('static', filename='assets/img/jollibee-logo-2x.webp') }}" alt="Jollibee Logo" >
-                <p class="copyright-info">No rights reserved (Unofficial Website) </p>
-                <a href="https://www.jollibee.com.ph" target="_blank"><button type="button" class="btn btn-lg">Official Jollibee Website</button></a>
-             </div>
+          <!-- Contact Us -->
+          <div class="col-md-3">
+            <h2 class="contact-heading">Contact Us</h2>
+            <p class="contact-info">(632) 8634-1111</p>
+            <p class="contact-info">president@jollibee.com.ph</p>
+          </div>
 
-            <!-- Contact Us -->
-            <div class="col-md-3">
-              <h2 class="contact-heading">Contact Us</h2>
-              <p class="contact-info">(632) 8634-1111</p>
-              <p class="contact-info">president@jollibee.com.ph</p>
-            </div>
+          <!-- Social Media -->
+          <div class="col-md-3">
+            <h2>Follow Us</h2>
+            <a
+              href="https://www.facebook.com/JollibeePhilippines/"
+              class="fa fa-facebook"
+              target="_blank"
+            ></a>
+            <a
+              href="https://twitter.com/Jollibee?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+              class="fa fa-twitter"
+              target="_blank"
+            ></a>
+            <a
+              href="https://www.instagram.com/jollibee/?locale=en_US%2Cen_GB%2Cen_US%2Cen_GB%2Cen_US%2Cen_GB%2Cen_US%2Cen&hl=en"
+              class="fa fa-instagram"
+              target="_blank"
+            ></a>
+            <a
+              href="https://youtube.com/@jollibeephilippinesofficial?si=tAxyMjQMtjgPytpt"
+              class="fa fa-youtube"
+              target="_blank"
+            ></a>
+          </div>
 
-
-            <!-- Social Media -->
-             <div class="col-md-3">
-              <h2>Follow Us</h2>
-              <a href="https://www.facebook.com/JollibeePhilippines/" class="fa fa-facebook" target="_blank"></a>
-              <a href="https://twitter.com/Jollibee?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="fa fa-twitter" target="_blank"></a>
-              <a href="https://www.instagram.com/jollibee/?locale=en_US%2Cen_GB%2Cen_US%2Cen_GB%2Cen_US%2Cen_GB%2Cen_US%2Cen&hl=en" class="fa fa-instagram" target="_blank"></a>
-              <a href="https://youtube.com/@jollibeephilippinesofficial?si=tAxyMjQMtjgPytpt" class="fa fa-youtube" target="_blank"></a>
-             </div>
-
-            <!-- Sitemap/Quicklinks -->
-             <div class="col-md-3">
-              <h2>Quick Links</h2>
-              <ul class="list-unstyled">
-                <li><a class="quick-link" href="/home">Home</a></li>
-                <li><a class="quick-link" href="/review">Reviews</a></li>
-                <li><a class="quick-link" href="/login">Login</a></li>
-                <li><a class="quick-link" href="/sign-up">Sign up</a></li>
-              </ul>
-             </div> <!--End of row div -->
-          </div> <!--End of container div -->
-
+          <!-- Sitemap/Quicklinks -->
+          <div class="col-md-3">
+            <h2>Quick Links</h2>
+            <ul class="list-unstyled">
+              <li><a class="quick-link" href="/home">Home</a></li>
+              <li><a class="quick-link" href="/review">Reviews</a></li>
+              <li><a class="quick-link" href="/login">Login</a></li>
+              <li><a class="quick-link" href="/sign-up">Sign up</a></li>
+            </ul>
+          </div>
+          <!--End of row div -->
         </div>
-      </footer> <!-- End of Footer -->
-
+        <!--End of container div -->
+      </div>
+    </footer>
+    <!-- End of Footer -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='index.js')}}">
-    </script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='index.js')}}"
+    ></script>
   </body>
 </html>

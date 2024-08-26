@@ -11,8 +11,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem ; 
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1); /* Adds a shadow to the navbar */
+    padding: 1rem;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+    /* Adds a shadow to the navbar */
 }
 
 .navbar-nav {
@@ -23,7 +24,7 @@ body {
 
 /* CSS for the navbar toggler icon*/
 .navbar-toggler {
-    border: none; 
+    border: none;
 }
 
 /* CSS url for the toggler icon*/
@@ -51,7 +52,11 @@ body {
 }
 
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-weight: 900;
 }
 
@@ -77,7 +82,8 @@ h1, h2, h3, h4, h5 {
 
 
 #navbar {
-    transition: all 0.5s; /* Adds a smooth transition effect */
+    transition: all 0.5s;
+    /* Adds a smooth transition effect */
 }
 
 /* CSS sticky class to make navbar sticky with the use of javascript */
@@ -88,8 +94,10 @@ h1, h2, h3, h4, h5 {
     z-index: 1000;
     transform: translateY(-100%);
     background-color: white;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.097); /* Adds a shadow to the navbar */
-    animation: collapseDown 0.5s forwards; /* Adds a collapsing effect when the navbar becomes sticky */
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.097);
+    /* Adds a shadow to the navbar */
+    animation: collapseDown 0.5s forwards;
+    /* Adds a collapsing effect when the navbar becomes sticky */
 }
 
 
@@ -97,10 +105,11 @@ h1, h2, h3, h4, h5 {
     0% {
         transform: translateY(-100%);
     }
+
     100% {
         transform: translateY(0);
     }
-} 
+}
 
 
 .hidden {
@@ -116,8 +125,9 @@ h1, h2, h3, h4, h5 {
 
 /* CSS for the main section */
 section {
-    width: 100%;	
-    box-sizing: border-box; /* Ensures that the border is included in the width and height of the element */
+    width: 100%;
+    box-sizing: border-box;
+    /* Ensures that the border is included in the width and height of the element */
 }
 
 /* CSS for the main section */
@@ -132,7 +142,7 @@ section {
     margin: 0;
     padding: 0;
     width: 100%;
-    max-width: 100%; 
+    max-width: 100%;
 }
 
 /* CSS for the footer */
@@ -140,7 +150,7 @@ section {
     background-color: rgb(164, 4, 4);
     color: white;
     height: auto;
-    padding: 3rem; 
+    padding: 3rem;
     border-top: 1px solid #dee2e6;
 
     .col-md-3 {
@@ -152,7 +162,7 @@ section {
 .footer-image {
     width: 75%;
     height: auto;
-    display: block; 
+    display: block;
     margin-bottom: 10px;
 }
 
@@ -199,7 +209,7 @@ section {
 }
 
 /* Jollipepe */
-.jollipepe img{
+.jollipepe img {
     position: fixed;
     width: 150px;
     bottom: 0;
@@ -269,7 +279,8 @@ section {
     transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.btn:hover, .btn:focus {
+.btn:hover,
+.btn:focus {
     background-color: #fa8003;
     color: white;
     transform: translateY(-3px);
@@ -299,13 +310,13 @@ section {
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 
-    a{
+    a {
         color: black;
         margin-bottom: 0;
         font-weight: bold;
     }
-    
-    a:hover{
+
+    a:hover {
         text-decoration: underline;
         color: black;
     }
@@ -344,7 +355,7 @@ section {
 
 .create_review {
     padding: 5rem;
-    margin: 2rem 2rem; 
+    margin: 2rem 2rem;
     height: 100vh;
 }
 
@@ -424,25 +435,26 @@ legend {
     border-radius: 10px;
 }
 
-.col-lg-12{
+.col-lg-12 {
     border-radius: 10px;
-    padding: 2rem;;
+    padding: 2rem;
+    ;
 }
 
-.column-header{
+.column-header {
     padding: 3rem;
     margin-bottom: 2rem;
     border-radius: 30px;
     background: #ffffff;
-    box-shadow:  11px 11px 22px #c2c2c2,
-                 -11px -11px 22px #ffffff;
+    box-shadow: 11px 11px 22px #c2c2c2,
+        -11px -11px 22px #ffffff;
 }
 
 .account-details {
     border-radius: 30px;
     background: #ffffff;
-    box-shadow:  11px 11px 22px #c2c2c2,
-                 -11px -11px 22px #ffffff;
+    box-shadow: 11px 11px 22px #c2c2c2,
+        -11px -11px 22px #ffffff;
 }
 
 /* CSS for the change password page */
@@ -451,8 +463,8 @@ legend {
     align-items: center;
     border-radius: 50px;
     background: #ffffff;
-    box-shadow:  20px 20px 60px #d9d9d9,
-                 -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px #d9d9d9,
+        -20px -20px 60px #ffffff;
     padding: 8rem;
 }
 
@@ -491,7 +503,7 @@ legend {
         font-size: 1.5rem;
     }
 
-    
+
     .p-5 {
         padding: 4rem !important;
     }

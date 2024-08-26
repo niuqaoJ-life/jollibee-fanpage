@@ -1,4 +1,4 @@
-window.onscroll = function () {toggleStickyNavbar()};
+window.onscroll = function () { toggleStickyNavbar() };
 
 function toggleStickyNavbar() {
     var navbar = document.getElementById("navbar");

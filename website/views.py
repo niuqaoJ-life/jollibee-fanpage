@@ -8,6 +8,8 @@ from . import db
 views = Blueprint("views", __name__)
 
 # Route for Home page
+
+
 @views.route("/")
 @views.route("/home")
 def home():
@@ -15,21 +17,24 @@ def home():
     return render_template("home.html", user=current_user)
 
 
-# Route to view reviews page 
+# Route to view reviews page
 @views.route("/review")
 @login_required
 def review():
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.order_by(Post.date_created.desc()).paginate(page=page, per_page=4)
+    posts = Post.query.order_by(
+        Post.date_created.desc()).paginate(page=page, per_page=4)
     return render_template("review.html", user=current_user, posts=posts)
 
 # CREATE POST
+
+
 @views.route("/create-post", methods=['GET', 'POST'])
 @login_required
 def create_post():
     if request.method == "POST":
         text = request.form.get('text')
-        if not text: 
+        if not text:
             flash('Post cannot be empty', category='error')
         else:
             post = Post(text=text, author=current_user.id)
@@ -40,13 +45,14 @@ def create_post():
     return render_template('create_review.html', user=current_user)
 
 
-#Like Post
+# Like Post
 @views.route("/like-post/<post_id>", methods=['POST'])
 @login_required
 def like(post_id):
-    post= Post.query.filter_by(id=post_id).first()
-    like = Like.query.filter_by(author=current_user.id, post_id=post_id).first()
-    
+    post = Post.query.filter_by(id=post_id).first()
+    like = Like.query.filter_by(
+        author=current_user.id, post_id=post_id).first()
+
     if not post:
         return jsonify({'error': 'Post does not exist.'}, 400)
     elif like:
@@ -56,11 +62,11 @@ def like(post_id):
         like = Like(author=current_user.id, post_id=post_id)
         db.session.add(like)
         db.session.commit()
-        
+
     return jsonify({"likes": len(post.likes), "liked": current_user.id in map(lambda x: x.author, post.likes)})
 
 
-#Check certain user's posts
+# Check certain user's posts
 @views.route("/posts/<username>")
 @login_required
 def posts(username):
@@ -70,12 +76,13 @@ def posts(username):
         return redirect(url_for('views.home'))
 
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.filter_by(author=user.id).paginate(page=page, per_page=4)
+    posts = Post.query.filter_by(
+        author=user.id).paginate(page=page, per_page=4)
 
     return render_template("user_reviews.html", user=current_user, posts=posts, username=username)
 
 
-#Delete Post
+# Delete Post
 @views.route("/delete-post/<id>")
 @login_required
 def delete_post(id):
@@ -96,12 +103,13 @@ def delete_post(id):
 @login_required
 def create_comment(post_id):
     text = request.form.get('text')
-    if not text: 
+    if not text:
         flash('Comment cannot be empty', category='error')
     else:
         post = Post.query.filter_by(id=post_id)
         if post:
-            comment = Comment(text=text, author=current_user.id, post_id=post_id)
+            comment = Comment(
+                text=text, author=current_user.id, post_id=post_id)
             db.session.add(comment)
             db.session.commit()
             flash('Comment posted!', category='success')
@@ -110,24 +118,26 @@ def create_comment(post_id):
     return redirect(url_for('views.review'))
 
 
-#Delete Comment 
+# Delete Comment
 @views.route("/delete-comment/<comment_id>")
 @login_required
 def delete_comment(comment_id):
     comment = Comment.query.filter_by(id=comment_id).first()
-    if not comment: 
+    if not comment:
         flash('Comment does not exist', category='error')
     elif current_user.id != comment.author and current_user.id != comment.post.author:
         flash('You do not have permission to delete this comment.', category='error')
-    else: 
+    else:
         db.session.delete(comment)
         db.session.commit()
     return redirect(url_for('views.review'))
 
 # Route to view account page and edit account details
+
+
 @views.route("/account", methods=['GET', 'POST'])
 @login_required
-def account():    
+def account():
     form = UpdateAccountForm()
     if form.validate_on_submit():
         current_user.username = form.username.data
@@ -143,6 +153,8 @@ def account():
     return render_template('account.html', user=current_user, form=form)
 
 # Route for changing password
+
+
 @views.route("/change-password", methods=['GET', 'POST'])
 @login_required
 def change_password():
@@ -151,12 +163,13 @@ def change_password():
         # Verifying the old password
         if check_password_hash(current_user.password, form.old_password.data):
             # Hashes the new password before committing to database
-            hashed_password = generate_password_hash((form.new_password.data), method='pbkdf2:sha256')
+            hashed_password = generate_password_hash(
+                (form.new_password.data), method='pbkdf2:sha256')
             current_user.password = hashed_password
             db.session.commit()
             flash('Password succesfully changed!', category='success')
             return redirect(url_for('views.account'))
     elif request.method == 'GET':
         form.old_password.data = ''
-        
+
     return render_template('change_password.html', user=current_user, form=form)
