@@ -241,14 +241,14 @@ section {
     transform: translateY(47%);
     display: flex;
     justify-content: space-between;
+}
 
-    .star-left {
-        transform: translateX(-50%);
-    }
+.stars-2 .star-left {
+    transform: translateX(-50%);
+}
 
-    .star-right {
-        transform: translateX(50%);
-    }
+.stars-2 .star-right {
+    transform: translateX(50%);
 }
 
 /* Removes margin that alert message has by default */
