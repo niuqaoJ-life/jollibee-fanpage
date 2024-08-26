@@ -30,7 +30,6 @@ auth = Blueprint("auth", __name__)
 def login():
     """Do login process for users.
 
-    Accepts both GET and POST requests.
     If a POST request is received,
     it retrieves the email and password from the request form.
     It then checks if the email exists in the database
@@ -64,7 +63,6 @@ def login():
 def sign_up():
     """Sign up route for user registration.
 
-    Handles both GET and POST requests for user sign up.
     If the user is already authenticated,
     they will be redirected to the home page.
     Otherwise, the user will be presented with a registration form.
