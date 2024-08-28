@@ -159,9 +159,9 @@ section {
 }
 
 .footer-image {
-    width: 75%;
+    width: 100%;
     height: auto;
-    display: block;
+    display: inline-block;
     margin-bottom: 10px;
 }
 
@@ -466,6 +466,11 @@ legend {
     padding: 8rem;
 }
 
+.change-password-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* CSS for account page responsive on small screens */
 @media (max-width: 480px) {
     .account-section {
@@ -476,13 +481,14 @@ legend {
         padding: 2rem;
         margin-bottom: 1rem;
     }
-}
 
-/* CSS for change password page responsiveness on small screens */
-@media (max-width: 480px) {
     .change-password-page {
         margin: 2rem;
         padding: 2rem;
+    }
+
+    .change-password-buttons {
+        display: inline-block;
     }
 
     .bini-member-image {
@@ -490,9 +496,10 @@ legend {
     }
 }
 
-/* Media queries for medium sized screens (tablets, ipads) */
-@media (min-width: 768px) {
 
+
+/* Media queries for medium sized screens (tablets, ipads) */
+@media (min-width: 768px) and (max-width: 1200px) {
     h1 {
         font-size: 3rem;
     }
@@ -505,16 +512,21 @@ legend {
     .p-5 {
         padding: 4rem !important;
     }
+
+    .change-password-page {
+        margin: 2rem 4rem 4rem 4rem;
+        padding: 6rem;
+    }
 }
 
 /* Media queries for larger screens (desktops) */
 @media (min-width: 1200px) {
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     p {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 }
