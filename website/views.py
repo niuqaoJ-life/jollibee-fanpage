@@ -1,3 +1,16 @@
+"""This module contains the views for the website. 
+It includes routes for the home page, review page,
+creating and deleting posts, liking posts,
+viewing user's posts, creating and deleting comments, 
+and managing user account details.
+The views are implemented using the Flask framework
+and interact with the database through SQLAlchemy.
+Authentication and authorization are handled using Flask-Login.
+The module also includes forms for updating account details and changing passwords.
+"""
+
+
+# Necessary imports for the views module
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
 from .models import Post, User, Like, Comment
@@ -5,11 +18,10 @@ from .forms import UpdateAccountForm, ChangePasswordForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 
+# Creates a Blueprint for the views
 views = Blueprint("views", __name__)
 
 # Route for Home page
-
-
 @views.route("/")
 @views.route("/home")
 def home():
@@ -26,9 +38,8 @@ def review():
         Post.date_created.desc()).paginate(page=page, per_page=4)
     return render_template("review.html", user=current_user, posts=posts)
 
+
 # CREATE POST
-
-
 @views.route("/create-post", methods=['GET', 'POST'])
 @login_required
 def create_post():
