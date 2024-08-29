@@ -40,6 +40,9 @@ def login():
     If the password is incorrect, an error flash message is displayed.
     If the email does not exist, an error flash message is displayed.
     """
+    if current_user.is_authenticated:
+        flash('You are already logged in.', category='success')
+        return redirect(url_for('views.home'))
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
