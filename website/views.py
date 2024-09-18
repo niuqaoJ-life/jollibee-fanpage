@@ -144,8 +144,6 @@ def delete_comment(comment_id):
     return redirect(url_for('views.review'))
 
 # Route to view account page and edit account details
-
-
 @views.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():

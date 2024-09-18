@@ -83,7 +83,7 @@ def sign_up():
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = generate_password_hash(
-            (form.password.data), method='sha256')
+            (form.password.data), method='pbkdf2:sha256')
         user = User(username=form.username.data,
                     email=form.email.data, password=hashed_password)
         db.session.add(user)
