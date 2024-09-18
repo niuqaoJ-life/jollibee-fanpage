@@ -7,7 +7,7 @@ updating user account information, and changing passwords.
 from flask_wtf import FlaskForm
 from flask_login import current_user
 from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError, Username
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from .models import User
 
 
@@ -29,14 +29,10 @@ class RegistrationForm(FlaskForm):
         validate_username: Validates if the entered username is already taken.
         validate_email: Validates if the entered email is already taken.
     """
-    username = StringField('Username', validators=[DataRequired(), Username(), Length(
-        min=2, max=20)], render_kw={"placeholder": "Enter Username"})
-    email = StringField('Email', validators=[DataRequired(), Email()], render_kw={
-                        "placeholder": "Enter Email Address"})
-    password = PasswordField('Password', validators=[DataRequired(), Length(
-        min=8)], render_kw={"placeholder": "Enter Password"})
-    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(
-    ), EqualTo('password')], render_kw={"placeholder": "Confirm Password"})
+    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)], render_kw={"placeholder": "Enter Username"})
+    email = StringField('Email', validators=[DataRequired(), Email()], render_kw={"placeholder": "Enter Email Address"})
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=8)], render_kw={"placeholder": "Enter Password"})
+    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')], render_kw={"placeholder": "Confirm Password"})
     submit = SubmitField('Sign Up')
 
     def validate_username(self, username):
