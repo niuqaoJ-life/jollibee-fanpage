@@ -99,11 +99,10 @@ class UpdateAccountForm(FlaskForm):
         Returns:
         - None
         """
-        if username.data != current_user.username:
-            user = User.query.filter_by(username=username.data).first()
-            if user:
-                raise ValidationError(
-                    'That username is taken. Please choose a different one.')
+        user = User.query.filter_by(username=username.data).first()
+        if user:
+            raise ValidationError(
+                'That username is taken. Please choose a different one.')
 
     def validate_email(self, email):
         """Validates the email input by comparing it with the current user's email and checking if it is already taken by another user.
@@ -152,3 +151,4 @@ class ChangePasswordForm (FlaskForm):
         user = User.query.filter_by(id=current_user.id).first()
         if user and not check_password_hash(user.password, old_password.data):
             raise ValidationError('Old password is incorrect')
+        
