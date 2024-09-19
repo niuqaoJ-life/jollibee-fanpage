@@ -9,6 +9,7 @@ from flask_login import current_user
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from .models import User
+from werkzeug.security import check_password_hash
 
 
 class RegistrationForm(FlaskForm):
@@ -148,7 +149,6 @@ class ChangePasswordForm (FlaskForm):
         Raises:
         - ValidationError: If the old password is incorrect.
         """
-        if old_password.data != current_user.password:
-            user = User.query.filter_by(password=old_password.data).first()
-            if user:
-                raise ValidationError('Old password is incorrect')
+        user = User.query.filter_by(id=current_user.id).first()
+        if user and not check_password_hash(user.password, old_password.data):
+            raise ValidationError('Old password is incorrect')
