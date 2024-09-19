@@ -162,8 +162,6 @@ def account():
     return render_template('account.html', user=current_user, form=form)
 
 # Route for changing password
-
-
 @views.route("/change-password", methods=['GET', 'POST'])
 @login_required
 def change_password():
